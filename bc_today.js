@@ -1,4 +1,4 @@
-
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -14,7 +14,24 @@
 
 */
 
+// Here the variable is set to a specific date 
+// var thisDate = new Date("October 12, 2018");
+var thisDate = new Date;
 
+// Here using the previous variable the date is made into a text string
+var dateString = thisDate.toLocaleString();
+
+// here the h2 is created where the Date changes in the string
+var dateHTML = "<h2>" + dateString + "</h2>";
+
+// this variabel asigns the day of the date with a number from 0-6
+var thisDay = thisDate.getDay();
+
+// this calls the outcome of the getEvent function
+var eventHTML = getEvent(thisDay);
+
+// This say to display the combined strings from the to variables
+document.getElementById("unionToday").insertAdjacentHTML("beforeend", dateHTML + eventHTML);
 
 function getEvent(day) {
    var eventHTML;
